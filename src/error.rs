@@ -36,7 +36,7 @@ pub enum SendErrorTimeout {
     /// Indicates that channel operation reached timeout and is canceled
     Timeout,
 }
-impl core::error::Error for SendErrorTimeout {}
+impl std::error::Error for SendErrorTimeout {}
 impl fmt::Display for SendErrorTimeout {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Display::fmt(
@@ -60,7 +60,7 @@ pub enum ReceiveError {
     /// closed from the send side
     SendClosed,
 }
-impl core::error::Error for ReceiveError {}
+impl std::error::Error for ReceiveError {}
 impl fmt::Display for ReceiveError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Display::fmt(
@@ -85,7 +85,7 @@ pub enum ReceiveErrorTimeout {
     /// Indicates that channel operation reached timeout and is canceled
     Timeout,
 }
-impl core::error::Error for ReceiveErrorTimeout {}
+impl std::error::Error for ReceiveErrorTimeout {}
 impl fmt::Display for ReceiveErrorTimeout {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Display::fmt(
@@ -102,7 +102,7 @@ impl fmt::Display for ReceiveErrorTimeout {
 /// Error type for closing a channel when channel is already closed
 #[derive(Debug, PartialEq, Eq)]
 pub struct CloseError();
-impl core::error::Error for CloseError {}
+impl std::error::Error for CloseError {}
 impl fmt::Display for CloseError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         fmt::Display::fmt("channel is already closed", f)
